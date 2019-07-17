@@ -42,9 +42,9 @@ POSE_GRAPH = {
       full_resolution_depth = 3,
       min_rotational_score = 0.77,
       min_low_resolution_score = 0.55,
-      linear_xy_search_window = 5.,
-      linear_z_search_window = 1.,
-      angular_search_window = math.rad(15.),
+      linear_xy_search_window = 5., --5.
+      linear_z_search_window = 50.,   --1.
+      angular_search_window = math.rad(40.), --math.rad(15.)
     },
     ceres_scan_matcher_3d = {
       occupied_space_weight_0 = 5.,
@@ -72,8 +72,6 @@ POSE_GRAPH = {
     fixed_frame_pose_translation_weight = 1e1,
     fixed_frame_pose_rotation_weight = 1e2,
     log_solver_summary = false,
-    use_online_imu_extrinsics_in_3d = true,
-    fix_z_in_3d = false,
     ceres_solver_options = {
       use_nonmonotonic_steps = false,
       max_num_iterations = 50,
@@ -84,9 +82,4 @@ POSE_GRAPH = {
   global_sampling_ratio = 0.003,
   log_residual_histograms = true,
   global_constraint_search_after_n_seconds = 10.,
-  --  overlapping_submaps_trimmer_2d = {
-  --    fresh_submaps_count = 1,
-  --    min_covered_area = 2,
-  --    min_added_submaps_count = 5,
-  --  },
 }
